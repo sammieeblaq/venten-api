@@ -4,9 +4,9 @@ const upload = require("../middleware/fileUpload");
 
 const productController = require("../controllers/product.controllers");
 
-app.get("/", productController);
+router.get("/", productController.getProduct);
 
-app.get("/:id", productController);
+router.get("/:id", productController.getProductId);
 
-app.post("/", upload.single("Image"), productController);
+router.post("/", upload.single("image"), productController.postProduct);
 module.exports = router;

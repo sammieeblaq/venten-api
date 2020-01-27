@@ -14,7 +14,7 @@ exports.getProduct = (req, res) => {
                         Price: doc.price,
                         request: {
                             type: "GET",
-                            url: `http://localhost:3000/product/${doc._id}`
+                            url: `http://localhost:4000/product/${doc._id}`
                         }
                     }
                 })
@@ -45,7 +45,7 @@ exports.postProduct = (req, res) => {
                     Color: result.color,
                     request: {
                         type: "POST",
-                        url: `http://localhost:3000/product/${result._id}`
+                        url: `http://localhost:4000/product/${result._id}`
                     }
                 }
             })
@@ -65,7 +65,7 @@ exports.getProductId = (req, res) => {
                     product: product,
                     request: {
                         type: "GET",
-                        url: `http://localhost:3000/product`
+                        url: `http://localhost:4000/product`
                     }
                 });
             } else {

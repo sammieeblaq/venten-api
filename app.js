@@ -13,8 +13,12 @@ const productRoutes = require("./routes/product");
 
 // Connect to the database
 mongoose.connect("mongodb://localhost/venten", { useNewUrlParser: true, useUnifiedTopology: true });
-
-
+// mongodb+srv://node-shop:<password>@venten-vpqyt.mongodb.net/test?retryWrites=true&w=majority
+// mongoose.connect(`mongodb+srv://node-shop:${process.env.MONGO_ATLAS_PW}@venten-vpqyt.mongodb.net/test?retryWrites=true&w=majority,`, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// });
+mongoose.Promise = global.Promise;
 app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(express.static("uploads"));

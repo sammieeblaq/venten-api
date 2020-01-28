@@ -29,7 +29,7 @@ exports.postProduct = (req, res) => {
         description: req.body.description,
         price: req.body.price,
         category: req.body.category,
-        // image: req.file.path,
+        image: req.file.path,
         color: req.body.color
     });
     product.save()
